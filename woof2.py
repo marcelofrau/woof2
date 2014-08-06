@@ -83,31 +83,27 @@ def main():
                                 if maxdown <= 0:
                                         raise ValueError
                         except ValueError:
-                                usage(config['port'], config['maxdownloads'], "invalid download count: %r. Please specify an integer >= 0." % val)
+                                usage(config['port'], config['maxdownloads'], "invalid download count: %r. Please specify an integer >= 0." % value)
                 elif option == '-i':
                         config['address'] = value
                 elif option == '-p':
                         try:
-                                config['port']= int(val)
+                                config['port']= int(value)
                         except ValueError:
-                                usage(config['port'], config['maxdownloads'], "invalid port number: %r. Please specify an integer" % val)
+                                usage(config['port'], config['maxdownloads'], "invalid port number: %r. Please specify an integer" % value)
                 elif option == '-s':
                         filenames.append (__file__)
                 elif option == '-h':
-                        usage(defaultport, defaultmaxdown)
+                        usage(config['port'], config['maxdownloads'])
                 elif option == '-U':
                         config['upload'] = True
                 elif option == '-z':
-                        compressed = 'gz'
-                elif option == '-j':
-                        compressed = 'bz2'
-                elif option == '-Z':
                         compressed = 'zip'
                 elif option == '-u':
                         compressed = ''
                 else:
                         usage(config['port'], config['maxdownloads'], "Unknown option: %r" % option)
-
+                        
         #Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
 		#httpd = SocketServer.TCPServer((config['address'], config['port']), Handler)
 
