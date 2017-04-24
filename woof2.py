@@ -14,7 +14,7 @@ import getopt
 
 config = {
 		"port": 8888,
-		"address": 'vntwksgm7013',
+		"address": 'machinename',
 		"maxdownloads": 1,
 		"upload": False,
 }
